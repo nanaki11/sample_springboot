@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layout}">
+<head>
+<title>お気に入り一覧</title>
+</head>
+<body>
+	<div layout:fragment="content">
+
+		<table>
+			<thead>
+				<tr>
+					<th><h2>お知らせ</h2></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="notice : ${notice_list}">
+					<td th:text="${notice.contentTitle}" helf="" />
+				</tr>
+			</tbody>
+		</table>
+
+		<h2>最新情報</h2>
+
+
+		<form action="/search" th:action="@{/search}" method="post">
+			<button type="submit" name="keyword" value="お知らせ">お知らせ</button>
+			<button type="submit" name="keyword" value="キャンペーン">キャンペーン</button>
+			<button type="submit" name="keyword" value="イベント">イベント</button>
+			<button type="submit" name="keyword" value="アート">アート</button>
+		</form>
+
+		<table>
+			<tbody>
+				<tr th:each="content : ${content_list}">
+					<td th:text="${content.contentTitle}" />
+
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</body>
+</html>

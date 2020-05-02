@@ -1,0 +1,29 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <title layout:title-pattern="$CONTENT_TITLE | $LAYOUT_TITLE">Thymeleaf de layout</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" media="all" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+  <link rel="stylesheet" media="all" th:href="@{/css/style.css}" />
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div layout:replace="~{layout/header::header}"></div>
+<div layout:replace="~{layout/navi::navbar}"></div>
+<div id="content" class="clearfix">
+<div class="container">
+  <div layout:fragment="content" th:remove="tag"></div>
+</div>
+</div>
+<div layout:replace="~{layout/footer::footer}"></div>
+<script type="text/javascript" th:src="@{/webjars/jquery/1.12.4/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+</body>
+</html>

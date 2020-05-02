@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body>
+<div id="global-navbar" layout:fragment="navbar" class="clearfix">
+<nav class="navbar navbar-default" role="navigation">
+ <div class="container">
+  <div class="navbar-header">
+   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+   <span class="sr-only">Toggle navigation</span>
+   <span class="icon-bar"></span>
+   <span class="icon-bar"></span>
+   <span class="icon-bar"></span>
+   </button>
+   <span class="navbar-brand visible-xs">メニュー</span>
+  </div>
+  <div class="navbar-collapse collapse">
+   <ul class="nav navbar-nav">
+   <li><a href="/" title="ホーム">ホーム<br/><small>HOME</small></a></li>
+   <li><a href="/company/" title="会社概要">会社概要<br/><small>COMPANY</small></a></li>
+   <li><a href="/service/" title="サービス">サービス<br/><small>SERVICE</small></a></li>
+   <li><a href="/recruit/" title="採用情報">採用情報<br/><small>RECRIT</small></a></li>
+   </ul>
+  </div>
+ </div>
+</nav>
+</div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layout}">
+<head>
+<title>共立メンテナンス|ファミリーメンバー解除画面</title>
+</head>
+<body id="topPage">
+	<div layout:fragment="kyoritsu_container">
+		<!-- ヘッダ -->
+		<div id="contentArea" class="">
+			<div id="articleArea" class="familyMemberArea">
+				<section class="contentBox">
+					<article class="contentDetailArea">
+						<h2 class="main_title">
+							<p>ファミリーメンバーズ連携解除</p>
+						</h2>
+						<h3 class="line_title font-color-green">
+							<p>あなたから招待されたメンバー</p>
+						</h3>
+						<h4 class="line_after_sub_title font-color-green">（上限最大６名様まで）</h4>
+						<form action="">
+							<ul class="checkBoxWithImgList clearfix">
+								<li><input type="checkbox" id="member1"
+									name="familyMembers" value="member1" /> <label for="member1">
+										<img src="src/img/common/sample/family_1.png" alt="">
+										<p class="memberName">共立 一郎</p>
+										<p class="imgcheckbox"></p>
+								</label></li>
+								<li><input type="checkbox" id="member2"
+									name="familyMembers" value="member2" /> <label for="member2">
+										<img src="src/img/common/sample/family_2.png" alt="">
+										<p class="memberName">共立 一郎</p>
+										<p class="imgcheckbox"></p>
+								</label></li>
+								<li><input type="checkbox" id="member3"
+									name="familyMembers" value="member3" /> <label for="member3">
+										<img src="src/img/common/sample/family_2.png" alt="">
+										<p class="memberName">共立 一郎</p>
+										<p class="imgcheckbox"></p>
+								</label></li>
+								<li><input type="checkbox" id="member4"
+									name="familyMembers" value="member4" /> <label for="member4">
+										<img src="src/img/common/sample/family_1.png" alt="">
+										<p class="memberName">共立 一郎</p>
+										<p class="imgcheckbox"></p>
+								</label></li>
+							</ul>
+							<div class="submitBtnArea">
+								<button type="button"
+									class="btn btn-lg btn-block btn-color-pink content-more js_h"
+									data-toggle="modal" data-target="#modalUnLink">連携解除</button>
+								<hr class="halfLine" />
+								<a
+									class="btn btn-lg btn-block btn-color-navy_border content-more js_h"
+									href="">戻る</a>
+							</div>
+						</form>
+					</article>
+				</section>
+
+				<!-- フッター -->
+			</div>
+		</div>
+		<div class="totopBtnArea">
+			<button id="toTopBtn" class="js_h"></button>
+		</div>
+
+
+		<!-- ログイン確認modal -->
+		<div class="modal fade text-dialog" id="modalUnLink" tabindex="-1"
+			role="dialog" aria-labelledby="label1" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> </span>
+					</button>
+				</div>
+				<div class="modal-content">
+					<div class="modal-content-header">
+						<h5 class="contentTitle">
+							本当にファミリーメンバーズを<br />解除してよろしいですか？
+						</h5>
+					</div>
+					<div class="modal-footer doubleBtnArea">
+						<!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+						<a class="btn btn-block btn-lg btn-color-pink js_h"
+							data-toggle="modal" data-target="#modalUnLinkComplete"
+							data-dismiss="modal" href="javascript:void(0);">はい</a> <a
+							class="btn btn-block btn-lg btn-color-navy_border js_h"
+							href="javascript:void(0);" data-dismiss="modal">いいえ</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- modal -->
+
+		<!-- ログイン確認modal -->
+		<div class="modal fade text-dialog" id="modalUnLinkComplete"
+			tabindex="-1" role="dialog" aria-labelledby="label1"
+			aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> </span>
+					</button>
+				</div>
+				<div class="modal-content">
+					<div class="modal-content-header">
+						<h5 class="contentTitle">
+							ファミリーメンバーズの解除が<br />完了しました。
+						</h5>
+					</div>
+					<div class="modal-footer">
+						<a class="btn btn-block btn-lg btn-color-navy_border js_h"
+							href="javascript:void(0);">会員情報画面に戻る</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

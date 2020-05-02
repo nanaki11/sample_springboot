@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layout}">
+<head>
+<title>コミュニティ一覧</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="/js/modal-multi.js" th:src="@{/js/modal-multi.js}"></script>
+<link href="/css/modal-multi.css" th:src="@{/css/modal-multi.css}" rel="stylesheet">
+</head>
+<body>
+	<div layout:fragment="content">
+
+		<div class="dialog" id="community-join" th:if="${null != joinCommunity}">
+			<div class="dialog-header">
+				<form th:action="@{/communitylist/index}" method="post">
+					<button type="submit" class="dialog-close">☓</button>
+				</form>
+			</div>
+			<div class="dialog-content">
+ 				<img th:src="${joinCommunity.communityImage}" />
+				<span th:text="${joinCommunity.communityName}" ></span>
+				<p>
+					コミュニティへのご参加ありがとうございます。<br>
+					コミュニティ登録が完了いたしました。
+				</p>
+				<a th:href="${joinCommunity.externalLink}" target="_blank">
+					<button type="submit">コミュニティサイトへ</button>
+				</a>
+			</div>
+		</div>
+
+		<div class="dialog" th:id="'community-confirmation' + ${status.index}" th:if="!${#lists.isEmpty(communityList)}" th:each="community, status : ${communityList}">
+			<div class="dialog-header">
+				<form th:action="@{/communitylist/index}" method="post">
+					<button type="submit" class="dialog-close">☓</button>
+				</form>
+			</div>
+			<div class="dialog-content">
+				<img th:src="${community.communityImage}" />
+				<span th:text="${community.communityName}"></span>
+				<p>本当に退会しますか？</p>
+				<button type="button" class="dialog-close">いいえ</button>
+				<form th:action="@{/communitylist/withdraw}" method="post">
+					<button type="submit" class="dialog-close" name="withdrawId" th:value="${community.communityId}">はい</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="dialog" id="community-withdraw" th:if="${null != withdrawCommunity}">
+			<div class="dialog-header">
+				<form th:action="@{/communitylist/index}" method="post">
+					<button type="submit" class="dialog-close">☓</button>
+				</form>
+			</div>
+			<div class="dialog-content">
+ 				<img th:src="${withdrawCommunity.communityImage}" />
+				<span th:text="${withdrawCommunity.communityName}" ></span>
+				<p>退会完了しました。</p>
+				<form th:action="@{/communitylist/index}" method="post">
+					<button type="submit" class="dialog-close">一覧に戻る</button>
+				</form>
+			</div>
+		</div>
+
+		<div>
+			<label>コミュニティとは？</label><br>
+			<p>コミュニティの説明文が入ります。</p>
+		</div>
+
+		<h2>コミュニティ一覧</h2>
+		<p th:if="${#lists.isEmpty(communityList)}">現在、表示できるコミュニティはありません。</p>
+		<table th:if="!${#lists.isEmpty(communityList)}">
+			<tbody>
+				<tr th:each="community, status : ${communityList}">
+					<th><img th:src="${community.communityImage}" /></th>
+					<td><p th:text="${community.communityName}"></td>
+					<td><p th:text="${community.coment}"></td>
+					<td th:if="${community.joined}">
+						<button type="button" th:id="'open-confirmation-dialog' + ${status.index}" th:value="${status.index}">退会する</button>
+					</td>
+					<td th:unless="${community.joined}">
+						<form th:action="@{/communitylist/join}" method="post">
+							<button type="submit" name="joinId" th:value="${community.communityId}">参加する</button>
+						</form>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</body>
+</html>

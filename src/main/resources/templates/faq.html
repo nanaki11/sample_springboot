@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{common/layout}">
+<head>
+    <title>よくある質問</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+          crossorigin="anonymous">
+    <!-- topへ戻る用 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+
+</head>
+
+<body>
+<div layout:fragment="content">
+    <style>
+        #page_top{
+          width: 50px;
+          height: 50px;
+          position: fixed;
+          right: 0;
+          bottom: 0;
+          background: #007bff;
+          opacity: 0.6;
+          border-radius: 50%;
+        }
+        #page_top a{
+          position: relative;
+          display: block;
+          width: 50px;
+          height: 50px;
+          text-decoration: none;
+        }
+        #page_top a::before{
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          content: '\f106';
+          font-size: 25px;
+          color: #fff;
+          position: absolute;
+          width: 25px;
+          height: 25px;
+          top: -5px;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          margin: auto;
+          text-align: center;
+        }
+    </style>
+    <!-- topへ戻るボタン -->
+	<div id="page_top"><a href="" onclick="location.href='#faq_top'; return=false;"></a></div>
+
+	<div class="container">
+	    <div align="center" id="faq_top">
+	    <h2>よくあるご質問・お問い合わせ</h2>
+	    <div  class = "alert alert-secondary" align = "center">
+	        よくいただくご質問についてご紹介しております。まずはこちらをご参考ください。
+	    </div>
+	    </div>
+
+	    <!-- ページ内遷移用のボタン -->
+	    <div class="row">
+	        <div class="col-6">
+	            <button class="col-12 btn btn-outline-primary" type="button" onclick="location.href='#q1'">
+	                <div class="row justify-content-between">
+	                    <div class="col-3">〇〇について</div><div class="col-1">></div>
+	                </div>
+	            </button>
+	        </div>
+	        <div class="col-6">
+	            <button class="col-12 btn btn-outline-primary" type="button" onclick="location.href='#q2'">
+	                <div class="row justify-content-between">
+	                    <div class="col-3">××について</div><div class="col-1">></div>
+	                </div>
+	            </button>
+	        </div>
+	        <div class="w-100"></div>
+	        <div class="col-6">
+	            <button class="col-12 btn btn-outline-primary" type="button" onclick="location.href='#q3'">
+	                <div class="row justify-content-between">
+	                    <div class="col-3">△△についてて</div><div class="col-1">></div>
+	                </div>
+	            </button>
+	        </div>
+	        <div class="col-6">
+	            <button class="col-12 btn btn-outline-primary" type="button" onclick="location.href='#q4'">
+	                <div class="row justify-content-between">
+	                    <div class="col-3">□□について</div><div class="col-1">></div>
+	                </div>
+	            </button>
+	        </div>
+	    </div>
+	    <br>
+
+
+	    <!-- よくある質問 -->
+	    <div class="row border-top" id="q1" >
+	        <br>
+	        <div class="col-3">
+	            <h3>〇〇について</h3>
+	        </div>
+	        <div class="col-9">
+	            <div class="row">
+	                <div class="col-12">
+	                    <div class="row">
+	                        <div class="col-1">Q</div>
+	                        <div class="col-11">
+	                            <h4>よくある質問内容よくある質問内容よくある質問内容？</h4>
+	                        </div>
+	                        <div class="w-100"></div>
+	                        <div class="col-1">A</div>
+	                        <div class="col-11">
+	                            よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答。
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="w-100"></div>
+	                <div class="col-12">
+	                    <div class="row">
+	                        <div class="col-1">Q</div>
+	                        <div class="col-11">
+	                            <h4>よくある質問内容よくある質問内容よくある質問内容？</h4>
+	                        </div>
+	                        <div class="w-100"></div>
+	                        <div class="col-1">A</div>
+	                        <div class="col-11">
+	                            よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答。
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="w-100"></div>
+	                <div class="col-12">
+	                    <div class="row">
+	                        <div class="col-1">Q</div>
+	                        <div class="col-11">
+	                            <h4>よくある質問内容よくある質問内容よくある質問内容？</h4>
+	                        </div>
+	                        <div class="w-100"></div>
+	                        <div class="col-1">A</div>
+	                        <div class="col-11">
+	                            よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答。
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+
+	    <div class="row border-top" id="q2">
+	        <br>
+	        <div class="col-3">
+	            <h3>××について</h3>
+	        </div>
+	        <div class="col-9">
+	            <div class="row">
+	                <div class="col-12">
+	                    <div class="row">
+	                        <div class="col-1">Q</div>
+	                        <div class="col-11">
+	                            <h4>よくある質問内容よくある質問内容よくある質問内容？</h4>
+	                        </div>
+	                        <div class="w-100"></div>
+	                        <div class="col-1">A</div>
+	                        <div class="col-11">
+	                            よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答。
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="w-100"></div>
+	                <div class="col-12">
+	                    <div class="row">
+	                        <div class="col-1">Q</div>
+	                        <div class="col-11">
+	                            <h4>よくある質問内容よくある質問内容よくある質問内容？</h4>
+	                        </div>
+	                        <div class="w-100"></div>
+	                        <div class="col-1">A</div>
+	                        <div class="col-11">
+	                            よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答。
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="w-100"></div>
+	                <div class="col-12">
+	                    <div class="row">
+	                        <div class="col-1">Q</div>
+	                        <div class="col-11">
+	                            <h4>よくある質問内容よくある質問内容よくある質問内容？</h4>
+	                        </div>
+	                        <div class="w-100"></div>
+	                        <div class="col-1">A</div>
+	                        <div class="col-11">
+	                            よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答。
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+
+	    <div class="row border-top" id="q3">
+	        <br>
+	        <div class="col-3">
+	            <h3>△△について</h3>
+	        </div>
+	        <div class="col-9">
+	            <div class="row">
+	                <div class="col-12">
+	                    <div class="row">
+	                        <div class="col-1">Q</div>
+	                        <div class="col-11">
+	                            <h4>よくある質問内容よくある質問内容よくある質問内容？</h4>
+	                        </div>
+	                        <div class="w-100"></div>
+	                        <div class="col-1">A</div>
+	                        <div class="col-11">
+	                            よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答。
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="w-100"></div>
+	                <div class="col-12">
+	                    <div class="row">
+	                        <div class="col-1">Q</div>
+	                        <div class="col-11">
+	                            <h4>よくある質問内容よくある質問内容よくある質問内容？</h4>
+	                        </div>
+	                        <div class="w-100"></div>
+	                        <div class="col-1">A</div>
+	                        <div class="col-11">
+	                            よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答。
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="w-100"></div>
+	                <div class="col-12">
+	                    <div class="row">
+	                        <div class="col-1">Q</div>
+	                        <div class="col-11">
+	                            <h4>よくある質問内容よくある質問内容よくある質問内容？</h4>
+	                        </div>
+	                        <div class="w-100"></div>
+	                        <div class="col-1">A</div>
+	                        <div class="col-11">
+	                            よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答。
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+
+	    <div class="row border-top" id="q4">
+	        <br>
+	        <div class="col-3">
+	            <h3>□□について</h3>
+	        </div>
+	        <div class="col-9">
+	            <div class="row">
+	                <div class="col-12">
+	                    <div class="row">
+	                        <div class="col-1">Q</div>
+	                        <div class="col-11">
+	                            <h4>よくある質問内容よくある質問内容よくある質問内容？</h4>
+	                        </div>
+	                        <div class="w-100"></div>
+	                        <div class="col-1">A</div>
+	                        <div class="col-11">
+	                            よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答。
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="w-100"></div>
+	                <div class="col-12">
+	                    <div class="row">
+	                        <div class="col-1">Q</div>
+	                        <div class="col-11">
+	                            <h4>よくある質問内容よくある質問内容よくある質問内容？</h4>
+	                        </div>
+	                        <div class="w-100"></div>
+	                        <div class="col-1">A</div>
+	                        <div class="col-11">
+	                            よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答。
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="w-100"></div>
+	                <div class="col-12">
+	                    <div class="row">
+	                        <div class="col-1">Q</div>
+	                        <div class="col-11">
+	                            <h4>よくある質問内容よくある質問内容よくある質問内容？</h4>
+	                        </div>
+	                        <div class="w-100"></div>
+	                        <div class="col-1">A</div>
+	                        <div class="col-11">
+	                            よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答よくある質問の回答。
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+
+	    <!-- お問い合わせへ -->
+	    <div class="border-top" align="center">
+	        <h4>お探しの内容がありませんか？</h4>
+	        <div  class = "alert alert-secondary" align = "center">
+	            お問い合わせはこちらからお寄せください。
+	        </div>
+	        <form action="/secure/contact/input" method="get">
+	            <button class="btn btn-primary" type="submit">お問い合わせ</button>
+	        </form>
+	        <a href="/" class="btn btn-outline-primary">戻る</a>
+	    </div>
+
+	</div>
+</div>
+
+</body>
+</html>

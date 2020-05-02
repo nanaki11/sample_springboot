@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{common/layout}">
+<head>
+    <title>お問い合わせ入力</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+          crossorigin="anonymous">
+</head>
+
+<body>
+<div layout:fragment="content">
+<div class="container">
+	<h2 align = "center">お問い合わせ</h2>
+
+    <h4 align = "center">インターネットでのお問い合わせにあたって</h4>
+    <div class = "alert alert-secondary" align = "center">
+    	お問い合わせいただいたご相談内容、お客様の個人情報につきましては厳重にお取り扱いいたします。<br>
+    	お問い合わせ内容によっては、お返事を差し上げるまでにお時間をいただく場合や、<br>
+    	メールではなく、お電話やお手紙でご連絡させていただく場合もございます。<br><br>
+    	<strong>ご対応時間：9:00～17:00（土・日・祝日・年末年始を除く）</strong>
+    </div>
+    <br>
+    <h5>お問い合わせ内容</h5>
+    <div align = "center">
+	    <form action = "/secure/contact/confirm" method = "post">
+			<textarea class = "form-control" rows = "8" name = "contactContent"
+			placeholder="お問い合わせ内容を入力してください。"
+			th:text="${contactContent}"></textarea>
+		    <br>
+		    <button class = "btn btn-primary" type = "submit">確認</button>
+	    </form>
+	    <br>
+	    <form action="/secure/faq" method="get">
+	    	<button class="btn btn-outline-primary" type="submit">戻る</button>
+	    </form>
+    </div>
+
+</div>
+</div>
+</body>
+</html>

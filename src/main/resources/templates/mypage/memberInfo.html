@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>membersTop</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+<div class="container">
+    <h2 th:text="#{communityList}"></h2>
+
+    <table class="table table-striped table-sm" style="text-align:center">
+        <tr >
+            <th>会員証</th>
+        </tr>
+        <tr th:each="memberCard : ${memberCardImg}">
+            <td ><img border="1" src=""  alt="会員証"></td>
+        </tr>
+        <tr>
+            <td ><input type="button" name="print" value="会員証を印刷する"></td>
+        </tr>
+    </table>
+
+    <table class="table table-striped table-sm" style="text-align:center">
+    	<tr>
+        	<th colspan ="2">プロフィール</th>
+        </tr>
+	    <tr>
+	    	<td rowspan="7"><img border="1" src=""  alt="顔写真"></td>
+	    	<td >名前</td>
+	    </tr>
+	    <tr>
+	    	<td >ニックネーム</td>
+	    </tr>
+	    <tr>
+	    	<td >メールアドレス</td>
+	    </tr>
+	    <tr>
+	    	<td >有料会員入会日yyy.mm.dd</td>
+	    </tr>
+	    <tr>
+	    	<td >有料会員更新日yyy.mm.dd</td>
+	    </tr>
+	    <tr>
+	    	<td >HOTESPAポイント</td>
+	    </tr>
+	    <tr>
+	    	<td >H</td>
+	    </tr>
+		<tr>
+        	<td colspan ="2"><input type="button" name="print" value="dポイントを確認する"></td>
+        </tr>
+        <tr>
+        	<td colspan ="2"><input type="button" name="print" value="dアカウントの連携・解除"></td>
+        </tr>
+    </table>
+
+    <table class="table table-striped table-sm" style="text-align:center">
+        <tr >
+            <th>所属コミュニティ</th>
+        </tr>
+        <tr>
+        	<td >所属コミュニティ名</td>
+        </tr>
+    </table>
+
+    <table class="table table-striped table-sm" style="text-align:center">
+        <tr >
+            <th>あなたの家族</th>
+        </tr>
+        <tr th:each="memberCard : ${memberCardImg}">
+            <td th:text="${community.communityId}"/>
+        </tr>
+        <tr>
+        <td ><img border="1" src=""  alt="家族写真"></td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>

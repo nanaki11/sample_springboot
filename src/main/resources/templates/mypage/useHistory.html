@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layout}">
+<head>
+<title>利用履歴</title>
+</head>
+<body>
+	<div layout:fragment="content">
+
+		<table>
+			<thead>
+				<tr>
+					<th><h2>2029年</h2></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="history : historyList">
+					<td th:text="${history}" helf="" />
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

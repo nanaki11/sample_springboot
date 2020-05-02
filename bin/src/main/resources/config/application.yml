@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob.non_contextual_creation: true
+  messages:
+    basename: i18n/messages
+  datasource:
+    url:  jdbc:postgresql://localhost:5432/kyoritsu
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver

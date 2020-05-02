@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>共立トップページ</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+
+	<form  id ="form" method="post" th:action="@{/search}">
+
+		<ul id="check" >
+			<li th:each="var, iterStat : ${tileList}">
+				<div>
+					<input type="checkbox" name="tileList" th:id="${iterStat.index}"
+						th:text="${var.contentTitle}" th:value="${var.contentType}">
+				</div>
+
+			</li>
+		</ul>
+		<button disabled value="送信する"  id="button">ボタン</button>
+	</form>
+	<form method="get" th:action="@{/index}">
+		<input type="submit" value="リセット">
+	</form>
+
+	<script>
+	$('#check').change(function() {
+
+
+        var check_count = $('#check :checked').length;
+        if (check_count == 0 ){
+
+	        $('button').prop('disabled', true);
+	    }
+	    else {
+	        $('button').prop('disabled', false);
+	    }
+
+	})
+	</script>
+
+</body>
+</html>

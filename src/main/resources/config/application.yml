@@ -1,0 +1,46 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob.non_contextual_creation: true
+  datasource:
+    url:  jdbc:postgresql://localhost:5432/kyoritsu
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+  #メール設定
+  mail: 
+    host: localhost
+    port: 2500
+    properties.mail.smtp.auth: false #AUTHコマンド使用する場合はtrue
+    properties.mail.smtp.starttls.enable: false #TLS使用する場合はtrue
+    #username: 
+    #password: 
+  #お問い合わせ設定
+  contact:
+    mailTo: contact_to@localhost.com
+  flyway:
+    baseline-on-migrate: true
+    baseline-version: 0.1.0
+server:
+  servlet:
+    session:
+      timeout: 1800
+  #ログ
+logging:
+    level:
+        org:
+            hibernate:
+                SQL: DEBUG
+                type:
+                    descriptor:
+                        sql:
+                            BasicBinder: TRACE
+  #エクスポートパラメーター
+apiUrl:
+  useHistoryUrl: https://localhost:8080/api/memberInfo/getUseHistory
+  getMemberInfoUrl: https://localhost:8080/api/memberInfo/getInfo
+  getMemberRelationUrl: https://localhost:8080/api/memberInfo/getInfo
+  cancelRelationUrl: https://localhost:8080/api/memberInfo/cancelRelation
+clientId: 1234
